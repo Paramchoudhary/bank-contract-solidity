@@ -20,7 +20,7 @@ contract SmartBankAccount {
     function getBalance(address userAddress) public view returns(uint) {
         uint principal = balances[userAddress];
         uint timeElapsed = block.timestamp - depositTimestamps[userAddress]; //seconds
-        return principal + uint((principal * 7 * timeElapsed) / (100 * 365 * 24 * 60 * 60)) + 1; //simple interest of 0.07%  per year
+        return principal + uint((principal * 7 * timeElapsed) / (100 * 365 * 24 * 60 * 60)) + 1; //simple interest of 0.07% per year
     }
     
     function withdraw() public payable {
